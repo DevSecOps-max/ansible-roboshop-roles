@@ -1,0 +1,24 @@
+  - name: create an app directory
+    ansible.builtin.file:
+      path: /app
+      state: directory
+      
+  - name: Create a roboshop system user
+    ansible.builtin.user:
+      name: roboshop
+      shell: /sbin/nologin
+      system: true
+      home: /app
+
+  - name: Donwload Catalogue code
+    ansible.builtin.get_url:
+      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
+      dest: /tmp/catalogue.zip
+
+
+   # This module by default feels like the file exists on the ansible control server, needs to extract on to remote machine
+  - name: Extract the catalogue code
+    ansible.builtin.unarchive:
+      src: /tmp/catalogue.zip
+      dest: /app
+      remote_src: true   # remote_src means the file is already available in the catalogue server
