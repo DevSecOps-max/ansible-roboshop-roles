@@ -27,9 +27,9 @@
     msg: "{{ catalogue_output }}"
 - name: load products
   ansible.builtin.shell: mongosh --host mongodb.laddudevops.shop < /app/db/master-data.js
-
   when: catalogue_output.stdout | int < 0
+
 - name: Systemd setup
   include_role:
     name: common
-    tasks_from: systemd.yaml
+    tasks_from: systemd
