@@ -7,7 +7,7 @@
   ansible.builtin.systemd_service:
     daemon_reload: true
     
-- name: start and enable catalogue
+- name: start and enable {{ component }}
   ansible.builtin.service:
     name: "{{ component }}"
     state: restarted  # Even when the app is not running you can restart
