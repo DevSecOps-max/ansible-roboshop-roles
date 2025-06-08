@@ -21,4 +21,4 @@
     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
       dest: /app
-      remote_src: true   # remote_src means the file is already available in the catalogue server
+      remote_src: yes   # remote_src means the file is already available in the catalogue server
