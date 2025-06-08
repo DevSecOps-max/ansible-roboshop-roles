@@ -9,6 +9,6 @@
     
 - name: start and enable catalogue
   ansible.builtin.service:
-    name: catalogue
+    name: "{{ component }}"
     state: restarted  # Even when the app is not running you can restart
-    enabled: true
+    enabled: yes
