@@ -1,4 +1,4 @@
-MONGO: mongodb.laddudevops.shop
+MONGODB_HOST: mongodb.laddudevops.shop
 
 
 
