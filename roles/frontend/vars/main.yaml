@@ -1,1 +1,3 @@
 CATALOGUE_HOST: catalogue.laddudevops.shop
+USER_HOST: user.laddudevops.shop
+CART_HOST: cart.laddudevops.shop
